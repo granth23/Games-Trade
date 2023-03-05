@@ -1,3 +1,6 @@
+import gevent.monkey
+gevent.monkey.patch_all()
+
 from flask import Flask, render_template, request, redirect, url_for, flash
 from wtforms import StringField, SubmitField, IntegerField
 from flask_wtf import FlaskForm
