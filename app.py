@@ -208,6 +208,7 @@ def cart():
 
 @app.route("/<x>", methods=['GET', 'POST'])
 def products(x):
+    print(x)
     if x in tags:
         products = list(all_products(x))
         for i in products:
@@ -276,9 +277,7 @@ def pay():
         phone = form.phone.data
         address = form.address.data
         add_info(email, name, phone, address)
-    client = razorpay.Client(auth= ('rzp_live_uO1dLYjT8cgApw','vIDT0VbSzLHPEdwhds8Il3sJ'))
-    payment = client.order.create({'amount' : int(get_total(email)), 'currency' : 'INR', 'payment_capture' : '1'})
-    return render_template('pay.html', payment= payment, email = email)
+    return render_template('pay.html', email = email)
 
 
 @app.route("/success", methods=['GET', 'POST'])
