@@ -1,13 +1,14 @@
 from datetime import datetime
 import pytz
-from pymongo import MongoClient
+from pymongo.mongo_client import MongoClient
+
 from user import User
 import random
 import string
 import smtplib
 
 country_time_zone = pytz.timezone('Asia/Kolkata')
-
+"mongodb+srv://test:test@cluster0.nrvnm.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient("mongodb+srv://test:test@cluster0.nrvnm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
 ecom = client.get_database("GamesTrade")
@@ -136,7 +137,6 @@ def prod_id():
     for x in products_collection.find({}):
         a.append(x.get('_id'))
     return a
-
 
 def all_prod():
     a = []
