@@ -77,96 +77,24 @@
     <h1 class="latest-title">Latest Products</h1>
     <div class="latest-flex">
 
+        {% for i in updates %}
         <div class="latest-block">
             <div class="latest-content">
-                <img src="https://m.media-amazon.com/images/I/81zqGrI0WbL._SL1500_.jpg" alt="" class="latest-img">
-                <div class="latest-name">Watch Dogs: Legion</div>
+                <img src="{{ i.get('image') }}" alt="" class="latest-img">
+                <div class="latest-name">{{ i.get('category') }} {{ i.get('name') }}</div>
                 <div class="latest-price">
-                    <span class="gold-price">INR 999</span>
+                    {% if i.get('srp') == i.get('mrp') %}
+                    <span class="gold-price">INR {{i.get('srp')}}</span>
+                    {% else %}
+                    <span class="gold-price">INR {{i.get('srp')}}</span>
                     &nbsp;&nbsp;&nbsp; <!-- adds space -->
-                    <span style="text-decoration: line-through;">INR 1299</span>
+                    <span style="text-decoration: line-through;">INR {{i.get('mrp')}}</span>
+                    {% endif %}
                 </div>
                 <div class="latest-buy"><a href="#">Add to cart</a></div>
             </div>
         </div>
-
-        <div class="latest-block">
-            <div class="latest-content">
-                <img src="https://m.media-amazon.com/images/I/61e-8RVSTUL._SL1500_.jpg" alt="" class="latest-img">
-                <div class="latest-name">Watch Dogs: Legion</div>
-                <div class="latest-price">
-                    <span class="gold-price">INR 999</span>
-                    &nbsp;&nbsp;&nbsp; <!-- adds space -->
-                    <span style="text-decoration: line-through;">INR 1299</span>
-                </div>
-                <div class="latest-buy"><a href="#">Add to cart</a></div>
-            </div>
-        </div>
-
-        <div class="latest-block">
-            <div class="latest-content">
-                <img src="https://m.media-amazon.com/images/I/81-HPq29oFL._SX385_.jpg" alt="" class="latest-img">
-                <div class="latest-name">Watch Dogs: Legion</div>
-                <div class="latest-price">
-                    <span class="gold-price">INR 999</span>
-                    &nbsp;&nbsp;&nbsp; <!-- adds space -->
-                    <span style="text-decoration: line-through;">INR 1299</span>
-                </div>
-                <div class="latest-buy"><a href="#">Add to cart</a></div>
-            </div>
-        </div>
-
-        <div class="latest-block">
-            <div class="latest-content">
-                <img src="https://m.media-amazon.com/images/I/814KXQdgEML._SL1500_.jpg" alt="" class="latest-img">
-                <div class="latest-name">Watch Dogs: Legion</div>
-                <div class="latest-price">
-                    <span class="gold-price">INR 999</span>
-                    &nbsp;&nbsp;&nbsp; <!-- adds space -->
-                    <span style="text-decoration: line-through;">INR 1299</span>
-                </div>
-                <div class="latest-buy"><a href="#">Add to cart</a></div>
-            </div>
-        </div>
-
-        <div class="latest-block">
-            <div class="latest-content">
-                <img src="https://m.media-amazon.com/images/I/81zqGrI0WbL._SL1500_.jpg" alt="" class="latest-img">
-                <div class="latest-name">Watch Dogs: Legion</div>
-                <div class="latest-price">
-                    <span class="gold-price">INR 999</span>
-                    &nbsp;&nbsp;&nbsp; <!-- adds space -->
-                    <span style="text-decoration: line-through;">INR 1299</span>
-                </div>
-                <div class="latest-buy"><a href="#">Add to cart</a></div>
-            </div>
-        </div>
-
-        <div class="latest-block">
-            <div class="latest-content">
-                <img src="https://m.media-amazon.com/images/I/61e-8RVSTUL._SL1500_.jpg" alt="" class="latest-img">
-                <div class="latest-name">Watch Dogs: Legion</div>
-                <div class="latest-price">
-                    <span class="gold-price">INR 999</span>
-                    &nbsp;&nbsp;&nbsp; <!-- adds space -->
-                    <span style="text-decoration: line-through;">INR 1299</span>
-                </div>
-                <div class="latest-buy"><a href="#">Add to cart</a></div>
-            </div>
-        </div>
-
-        <div class="latest-block">
-            <div class="latest-content">
-                <img src="https://m.media-amazon.com/images/I/81-HPq29oFL._SX385_.jpg" alt="" class="latest-img">
-                <div class="latest-name">Watch Dogs: Legion</div>
-                <div class="latest-price">
-                    <span class="gold-price">INR 999</span>
-                    &nbsp;&nbsp;&nbsp; <!-- adds space -->
-                    <span style="text-decoration: line-through;">INR 1299</span>
-                </div>
-                <div class="latest-buy"><a href="#">Add to cart</a></div>
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
 </section>
