@@ -7,9 +7,9 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 
 from db import get_user, save_user, update_cart, get_cart, set_qty
 from db import user_cart_prod, set_cart, status, add_info
-from db import all_products, get_product, get_product_id
+from db import all_products, get_product, get_product_id, all_updates
 from db import bill, mail, prod_qty, get_total, prod_id, search_prod
-from db import all_prod, update_product, save_product, updates
+from db import all_prod, update_product, save_product, latest_prod
 from db import all_orders, ord_track, track_all, empty_cart, total_items
 
 app = Flask(__name__)
@@ -90,9 +90,11 @@ def base():
 @app.route("/home", methods=['GET', 'POST'])
 def home():
     """Hi Audience"""
-    update = updates()
-    update.reverse()
-    return render_template('index.html', updates=update)
+    latest_products = latest_prod()
+    latest_products.reverse()
+    updates = all_updates()
+    updates.reverse()
+    return render_template('home.html', latest_prod=latest_products, updates=updates)
 
 
 @app.route("/search", methods=['GET', 'POST'])

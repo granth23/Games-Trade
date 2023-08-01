@@ -26,6 +26,8 @@ a {
     display: flex;
     justify-content: space-between;
     width: 100vw;
+    position: fixed;
+    z-index: 999999999999;
 }
 
 .header {
@@ -35,7 +37,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 33%;
+    width: 33.33%;
     height: 55px;
     justify-content: space-around;
     align-items: center;
@@ -78,8 +80,8 @@ a {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 66%;
-    height: 50px;
+    width: 66.67%;
+    height: 55px;
     justify-content: space-around;
     align-items: center;
 }

@@ -19,6 +19,7 @@ products_collection = ecom.get_collection("products")
 orders_collection = ecom.get_collection("orders")
 info_collection = ecom.get_collection("info")
 track_collection = ecom.get_collection("track")
+updates_collection = ecom.get_collection("updates")
 
 
 def get_user(email):
@@ -341,10 +342,19 @@ def total_items(email):
     return temp_var
 
 
-def updates():
+def latest_prod():
     """Hi Audience"""
     temp_var = []
     for i in products_collection.find({}):
+        temp_var.append(i)
+    temp_var = temp_var[-4:]
+    return temp_var
+
+
+def all_updates():
+    """Hi Audience"""
+    temp_var = []
+    for i in updates_collection.find({}):
         temp_var.append(i)
     temp_var = temp_var[-4:]
     return temp_var

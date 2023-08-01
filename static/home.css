@@ -98,22 +98,24 @@
 .intro-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 532px;
     z-index: 30000;
-
     margin-left: 20vw;
 }
 
 .slogan {
-    font-size: 46px;
+    font-size: 92px;
     font-weight: 600;
     word-spacing: 5px;
+    text-align: start;
+    width: 100%;
+
 }
 
 .slogan-1 {
-    background: -webkit-linear-gradient(0deg, #985df7,#6282fd);
+    background: -webkit-linear-gradient(0deg, #2641c2,#66fd01);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -124,6 +126,11 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.slogan-line-2 {
+    font-size: 41px;
+    width: 100%;
 }
 
 .slogan-desc {
@@ -245,7 +252,7 @@
     height: 580px;
     background: rgb(198,78,201);
     background: linear-gradient(0deg, rgba(198,78,201,1) 0%, rgba(116,118,251,1) 100%);
-    border-radius: 28px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,7 +271,7 @@
     width: 350px;
     height: 570px;
     background-color: #000;
-    border-radius: 23px;
+    border-radius: 11px;
     overflow: hidden;
 
     display: flex;
@@ -352,7 +359,7 @@
 .updates-block {
     width: 650px;
     height: 280px;
-    border-radius: 28px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -380,7 +387,7 @@
     width: 640px;
     height: 270px;
     background-color: #000;
-    border-radius: 23px;
+    border-radius: 11px;
     overflow: hidden;
 
     display: flex;
