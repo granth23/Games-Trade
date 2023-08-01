@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Trade</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
+</head>
+
+<body>
+
+    <!-- TOP PART -->
+    <div class="header-nav">
+        <header class="header">
+            <div class="logo">
+                <a href="#">
+                    <img src="{{url_for('static', filename='assets/GamesTradeLogo.png')}}" />
+                    <div class="logo-text">
+                        <div>Games</div>
+                        <div class="logo-trade">Trade</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+        <nav class="nav">
+            <div class="nav-links"><a href="#">Playstation</a></div>
+            <div class="nav-links"><a href="#">Xbox</a></div>
+            <div class="nav-links"><a href="#">Nintendo</a></div>
+            <div class="nav-links"><a href="#">Accessories</a></div>
+            <div class="nav-links"><a href="#">Digital</a></div>
+            <div class="nav-links"><a href="#">Surface</a></div>
+            <div class="nav-links"><a href="#">Contact us</a></div>
+            <div class="nav-links"><a href="#">Track order</a></div>
+        </nav>
+    </div>
+
+    {% block content %}{% endblock %}
+
+</body>
+
+</html>

@@ -92,7 +92,7 @@ def home():
     """Hi Audience"""
     update = updates()
     update.reverse()
-    return render_template('home.html', updates=update)
+    return render_template('index.html', updates=update)
 
 
 @app.route("/search", methods=['GET', 'POST'])
