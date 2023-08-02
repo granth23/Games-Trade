@@ -169,13 +169,16 @@ def all_products(category):
     for i in range(0, len(temp_list), 20):
         yield temp_list[i:i + 20]
 
+
 def test_all():
     """Hi Audience"""
     all_p = [[],[],[],[]]
     for i in range(1,4):
         all_p[i] = list(all_products('PS4'))[0]
     all_p[0] = list(all_products('PS5'))[0]
+    all_p[2] = list(all_products('PS5'))[0]
     return all_p
+
 
 def get_total(email):
     """Hi Audience"""
