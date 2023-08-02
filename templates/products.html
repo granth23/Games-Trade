@@ -14,6 +14,7 @@
             {% for j in range(1, lenproducts+1) %}
                 <div id={{j}} style="display:none;">
                     {% for i in products[j-1] %}
+                    <a href="/{{i.get('_id')}}">
                         <div class="latest-block">
                             <div class="latest-content">
                                 <img src="{{ i.get('image') }}" alt="" class="latest-img">
@@ -30,6 +31,7 @@
                                 <div class="latest-buy"><a href="/add/1{{i.get('_id')}}">Add to cart</a></div>
                             </div>
                         </div>
+                    </a>
                     {% endfor %}
                 </div>
             {% endfor %}
