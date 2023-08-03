@@ -10,7 +10,7 @@ from db import user_cart_prod, set_cart, status, add_info
 from db import all_products, get_product, get_product_id, all_updates
 from db import bill, mail, prod_qty, get_total, prod_id, search_prod
 from db import all_prod, update_product, save_product, latest_prod
-from db import all_orders, ord_track, track_all, empty_cart, total_items, test_all
+from db import all_orders, ord_track, track_all, empty_cart, total_items
 
 app = Flask(__name__)
 app.secret_key = "granthbagadiagranthbagadia"
@@ -262,8 +262,8 @@ def products(temp_x):
                                 item = f"{quantity}{i['_id']}"
                                 set_qty(current, item)
                                 return redirect(url_for('home'))
-        return render_template('products.html', lenproducts=len(test_all()),
-            products=test_all(), cart=cartx, x=temp_x)
+        return render_template('products.html', lenproducts=len(temp_products),
+            products=temp_products, cart=cartx, x=temp_x)
     elif temp_x in prod_id():
         if current_user.is_authenticated:
             cqty = user_cart_prod(current_user.email, temp_x)
@@ -369,24 +369,28 @@ def new_prod():
 def update_prod():
     """Hi Audience"""
     form = Update()
-    if form.validate_on_submit:
+    try:
         idt = form.idt.data
         mrp = form.mrp.data
         srp = form.srp.data
         quantity = form.quantity.data
         update_product(idt, mrp, srp, quantity)
         return render_template('update_product.html', products=all_prod(), form=form)
-    return render_template('update_product.html', products=all_prod(), form=form)
+    except TypeError:
+        return render_template('update_product.html', products=all_prod(), form=form)
 
 
 @app.route("/add_track", methods=['GET', 'POST'])
+
 def add_track():
     """Hi Audience"""
     form = Track()
-    if form.validate_on_submit:
+    try:
         idt = form.idt.data
         temp_status = form.status.data
         ord_track(idt, temp_status)
+    except TypeError:
+        pass
     return render_template('new_ord.html', orders=all_orders(), form=form, products=all_prod())
 
 

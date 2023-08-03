@@ -26,14 +26,13 @@ a {
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    position: fixed;
+    position: sticky;
     z-index: 999999999999;
 }
 
 .header {
     background-color: #010101;
     color: #ffffff;
-
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -43,7 +42,7 @@ a {
     align-items: center;
 }
 
-.logo > a{
+.logo>a {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -67,7 +66,7 @@ a {
 }
 
 .logo-trade {
-    background: -webkit-linear-gradient(0deg, #fff237,#ffa600);
+    background: -webkit-linear-gradient(0deg, #fff237, #ffa600);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -86,12 +85,11 @@ a {
     align-items: center;
 }
 
-.nav-links > a {
+.nav-links>a {
     font-size: 16px;
     transition: 0.3s;
 }
 
-.nav-links > a:hover {
+.nav-links>a:hover {
     color: #b5b3b5;
 }
-

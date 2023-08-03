@@ -1,5 +1,7 @@
 /* SECTION II LATEST PRODUCTS */
 
+
+
 .latest {
     width: 100%;
     display: flex;
@@ -11,16 +13,32 @@
 
 .latest-title {
     color: white;
-    font-size: 40px;
+    font-size: 70px;
     word-spacing: 5px;
     background: -webkit-linear-gradient(0deg, #df5298,#677ffc);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 80px;
+    margin-top: 34px;
+}
+
+.no-items {
+    margin-top: 30px;
+    font-size: 30px;
+    color: white;
 }
 
 .latest-flex {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.latest-page {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -42,9 +60,11 @@
     position: relative;
     transition:  ease 0.3s;
     margin-bottom: 30px;
+    top: 0px;
+    cursor: pointer;
 
     &:hover {
-        margin-top: -20px;
+        top: -20px;
     }
 
 }
@@ -106,16 +126,39 @@
     margin-bottom: 80px;
 }
 
-.previous {
-    background-color: #f1f1f1;
-    color: black;
-  }
+.next-prev-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+}
+
+
+.next-prev-button {
+    background-color: white;
+    font-size: 20px;
+    border-radius: 100%;
+    margin: 70px 14px;
+    width: 50px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.prev {
+    right: 0px;
+
+    &:hover {
+        right: 10px;
+    }
+}
 
 .next {
-    background-color: #04AA6D;
-    color: white;
+    left: 0px;
+
+    &:hover {
+        left: 10px;
+    }
 }
 
-.round {
-    border-radius: 50%;
-}

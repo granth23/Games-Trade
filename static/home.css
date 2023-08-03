@@ -115,7 +115,7 @@
 }
 
 .slogan-1 {
-    background: -webkit-linear-gradient(0deg, #2641c2,#66fd01);
+    background: -webkit-linear-gradient(0deg, #985df7,#6282fd);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -260,9 +260,11 @@
     position: relative;
     transition:  ease 0.3s;
     margin-bottom: 30px;
+    top: 0px;
+    cursor: pointer;
 
     &:hover {
-        margin-top: -20px;
+        top: -20px;
     }
 
 }
@@ -367,9 +369,10 @@
     position: relative;
     transition:  ease 0.3s;
     margin-bottom: 30px;
+    top: 0px;
 
     &:hover {
-        margin-top: -20px;
+        top: -20px;
     }
 }
 
