@@ -84,15 +84,12 @@
     position: absolute;
     width: 100vw;
     height: 700px;
-    top: 0;
     left: 0;
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
     z-index: 200;
     color: #fff;
-
 }
 
 .intro-box {
@@ -101,7 +98,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 532px;
-    z-index: 30000;
+    z-index: 0;
     margin-left: 20vw;
 }
 

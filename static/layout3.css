@@ -48,7 +48,7 @@ a {
     align-items: center;
 }
 
-.logo img{
+.logo img {
     height: 90%;
     margin-right: 10px;
 }
@@ -67,7 +67,7 @@ a {
 
 .logo-trade {
     margin-left: 2px;
-    background: -webkit-linear-gradient(0deg, #fffb03,#ffbb00);
+    background: -webkit-linear-gradient(0deg, #fffb03, #ffbb00);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -169,7 +169,7 @@ a {
 }
 
 .x-us-title {
-    background: -webkit-linear-gradient(0deg, #df5298,#677ffc);
+    background: -webkit-linear-gradient(0deg, #df5298, #677ffc);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -182,8 +182,8 @@ a {
     width: 170px;
     height: 3px;
     background-color: #3d3d3d;
-    background: rgb(198,78,201);
-    background: linear-gradient(90deg, #00000000 0%,  rgb(255, 0, 140) 25%, rgba(116,118,251,1) 75%, #00000000 100%);
+    background: rgb(198, 78, 201);
+    background: linear-gradient(90deg, #00000000 0%, rgb(255, 0, 140) 25%, rgba(116, 118, 251, 1) 75%, #00000000 100%);
     margin-bottom: 20px;
 }
 
