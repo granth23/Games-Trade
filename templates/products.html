@@ -10,10 +10,10 @@
         <h3 class="no-items">No Items available</h3>
     </center>
     {% else %}
-    {% for j in range(1, lenproducts+1) %}
-    <div id={{j}} class="latest-flex" style="display:none;">
-        {% for i in products[j-1] %}
-        <div class="latest-block" onclick="redirect('{{i.get('_id')}}')">
+    {% for j in range(lenproducts) %}
+    <div id={{j+1}} class="latest-flex" style="display:none;">
+        {% for i in products[j] %}
+        <div class="latest-block" onclick="redirect('product/{{i.get('_id')}}')">
             <div class="latest-content">
                 <img src="{{ i.get('image') }}" alt="" class="latest-img">
                 <div class="latest-name">{{ i.get('category') }} {{ i.get('name') }}</div>
@@ -23,10 +23,14 @@
                     {% else %}
                     <span class="gold-price">INR {{i.get('srp')}}</span>
                     &nbsp;&nbsp;&nbsp; <!-- adds space -->
-                    <span style="text-decoration: line-through;">INR {{i.get('mrp')}}</span>
+                    <span style="text-decoration: line-through;">INR {{i.get('mrp')}} </span>
                     {% endif %}
                 </div>
-                <div class="latest-buy"><a href="/add/1{{i.get('_id')}}">Add to cart</a></div>
+                {% if i.get('cqty') == 0 %}
+                <div class="latest-buy"><a href="/add/{{i.get('_id')}}">Add to cart</a></div>
+                {% else %}
+                <div class="latest-buy"><a href="/remove/{{i.get('_id')}}">Remove from cart</a></div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}

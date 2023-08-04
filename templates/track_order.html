@@ -57,6 +57,51 @@
             {{order.get('Status')}}
         </span>
     </div>
+    {% elif stat == 2 %}
+    <div class="d-flex">
+        <div style="border: 1px solid #000; padding: 10px; padding-left: 25px; padding-right: 25px;">
+            {% for j in order.get('cart') %}
+            {% for k in products %}
+            <div class="row" style="width:150px">
+                {% if j.get('_id') == k.get('_id') %}
+                <img class="iii" src={{k.get('image')}} style="width:50px; margin-bottom: 10px;" class="example">
+                &nbsp;&nbsp;
+                <div style="word-break: break-word;">
+                    <center>
+                        {{k.get('category')}}
+                        <br>
+                        {{k.get('name')}}
+                        <br>
+                        QTY: {{j.get('cqty')}}
+                    </center>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% endfor %}
+        </div>
+        &nbsp;&nbsp;
+        <span class="example">
+            {{order.get('name')}}
+        </span>
+        &nbsp;&nbsp;
+        <span class="example">
+            {{order.get('phone')}}
+        </span>
+        &nbsp;&nbsp;
+        <span class="example" style="width:225px">
+            {{order.get('address')}}
+        </span>
+        &nbsp;&nbsp;
+        <span class="example" style="width:100px">
+            INR: {{order.get('amount')}}
+        </span>
+
+        &nbsp;&nbsp;
+        <span class="example" style="width:100px">
+            {{order.get('Status')}}
+        </span>
+    </div>
     {% else %}
     <h4>Please enter a valid Order ID</h4>
     {% endif %}

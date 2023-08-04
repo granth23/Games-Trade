@@ -28,8 +28,6 @@
         </ul>
         <ul class="navbar-nav" style="color:white;">
             <li class="nav-item">
-                <i class="fa fa-clock-o">&nbsp;</i> {{ status }} &nbsp;&nbsp;
-                | &nbsp;&nbsp;
                 <i class="fa fa-phone"> &nbsp; </i>+918048034625 &nbsp;
             </li>
         </ul>
@@ -42,8 +40,7 @@
             <div class="d-inline-block" style="margin-top:3px">&nbsp; Bootstrap</div>
         </a>
         <div class="navbar-item topf">
-            <form method="POST" action="{{ url_for('search') }}" class="d-flex">
-                {{ form.hidden_tag() }}
+            <form method="POST" class="d-flex">
                 <input class="form-control ml search searchbtn" style="border-color: white; border-radius:0px; ""
                     type=" search" placeholder="Search" ,aria-label="Search" , name="search">
                 <button class="btn searchbtn" style="border-color: white; color:white; border-radius:0px;"

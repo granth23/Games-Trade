@@ -3,8 +3,36 @@
 
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='item.css') }}">
 
-<section>
-
+<section class="item-flex">
+    <div class="gallery">
+        <img class="gallery-img" src="https://m.media-amazon.com/images/I/61kWB+uzR2L._SL1500_.jpg">
+        <img class="gallery-img" src="https://m.media-amazon.com/images/I/61jll-As4nL._SL1500_.jpg">
+        <img class="gallery-img" src="https://m.media-amazon.com/images/I/61KiBcIJfQL._SL1500_.jpg">
+        <img class="gallery-img" src="https://m.media-amazon.com/images/I/71y7U-eXyCL._SL1500_.jpg">
+    </div>
+    <div class="photo">
+        <div class="photo-div">
+            <img class="photo-img" src="https://m.media-amazon.com/images/I/61kWB+uzR2L._SL1500_.jpg">
+        </div>
+    </div>
+    <div class="details">
+        <div class="sub-title">{{product.get('category')}}</div>
+        <div class="title">{{product.get('name')}}</div>
+        <div class="price">
+            {% if product.get('srp') == product.get('mrp') %}
+            <span class="gold-price">INR {{product.get('srp')}}</span>
+            {% else %}
+            <span class="gold-price">INR {{product.get('srp')}}</span>
+            &nbsp;&nbsp;&nbsp; <!-- adds space -->
+            <span style="text-decoration: line-through;">INR {{product.get('mrp')}}</span>
+            {% endif %}
+        </div>
+        <!-- <div class="desc">
+            {{product.get('info')}}
+        </div> -->
+        <div class="buy">Add to Cart</div>
+    </div>
 </section>
+
 
 {% endblock content %}
