@@ -51,6 +51,7 @@ def get_product(tag):
     for temp_var in products_collection.find({}):
         name = temp_var.get("_id")
         if tag == name:
+            temp_var['image'] = [temp_var['image'], temp_var['image'], temp_var['image']]
             return temp_var
 
 

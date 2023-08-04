@@ -5,14 +5,13 @@
 
 <section class="item-flex">
     <div class="gallery">
-        <img class="gallery-img" src="https://m.media-amazon.com/images/I/61kWB+uzR2L._SL1500_.jpg">
-        <img class="gallery-img" src="https://m.media-amazon.com/images/I/61jll-As4nL._SL1500_.jpg">
-        <img class="gallery-img" src="https://m.media-amazon.com/images/I/61KiBcIJfQL._SL1500_.jpg">
-        <img class="gallery-img" src="https://m.media-amazon.com/images/I/71y7U-eXyCL._SL1500_.jpg">
+        {% for i in product.get('image') %}
+        <img class="gallery-img" src="{{i}}">
+        {% endfor %}
     </div>
     <div class="photo">
         <div class="photo-div">
-            <img class="photo-img" src="https://m.media-amazon.com/images/I/61kWB+uzR2L._SL1500_.jpg">
+            <img class="photo-img" src="{{product.get('image')[0]}}">
         </div>
     </div>
     <div class="details">
