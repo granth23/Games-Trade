@@ -94,19 +94,6 @@ def home():
     return render_template('home.html', latest_prod=latest_products, updates=updates)
 
 
-@app.route("/info", methods=['GET', 'POST'])
-def info():
-    """Hi Audience"""
-    form = Info()
-    return render_template('info.html', form=form, t="info")
-
-
-@app.route("/contact-us", methods=['GET', 'POST'])
-def contact_us():
-    """Hi Audience"""
-    return render_template('contact us.html')
-
-
 @app.route("/contact", methods=['GET', 'POST'])
 def contact():
     """Hi Audience"""
@@ -135,6 +122,11 @@ def cart():
             temp_ut['cqty'] = i['cqty']
             temp_ut['total'] = i['cqty']*temp_ut['srp']
             temp_x.append(temp_ut)
+            if request.method == "POST":
+                name = request.form.get("name")
+                phone = request.form.get("phone")
+                email = request.form.get("email")
+                address = request.form.get("address")
         return render_template('cart.html', current=current, cart=temp_x,
             total_amount=tamount, total_qty=tqty)
     return redirect(url_for('home'))
@@ -247,12 +239,6 @@ def success():
     prod_qty(idt)
     flash("Order Placed Successfully!")
     return redirect(url_for('home'))
-
-
-@app.route("/test", methods=['GET', 'POST'])
-def test():
-    """Hi Audience"""
-    return render_template('test.html')
 
 
 @app.route("/home-admin", methods=['GET', 'POST'])

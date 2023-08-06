@@ -191,3 +191,25 @@ a {
     font-size: 20px;
     color: #979797;
 }
+
+.fa-stack[data-count]:after {
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    content: attr(data-count);
+    font-size: 35%;
+    padding: .6em;
+    border-radius: 999px;
+    line-height: .75em;
+    color: white;
+    color: rgb(24, 27, 70);
+    text-align: center;
+    min-width: 5%;
+    font-weight: bold;
+    background: white;
+    border-style: solid;
+}
+
+*:focus {
+    outline: none;
+}

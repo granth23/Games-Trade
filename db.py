@@ -311,7 +311,6 @@ def latest_prod(email=None):
                 if j['_id'] == i['_id']:
                     i['cqty'] = j['cqty']
         temp_var.append(i)
-    print(temp_var)
     temp_var = temp_var[-4:]
     return temp_var
 

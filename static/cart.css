@@ -1,6 +1,21 @@
-/* SECTION II LATEST PRODUCTS */
+#boxes{
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
+#leftbox {
+    float: left;
+    /* background: Red; */
+    width: 70%;
+    padding: 1%;
+}
 
+#rightbox {
+    float: right;
+    /* background: blue; */
+    width: 30%;
+    padding: 3%;
+}
 
 .latest {
     width: 100%;
@@ -11,34 +26,7 @@
     flex-direction: column;
 }
 
-.latest-title {
-    color: white;
-    font-size: 70px;
-    word-spacing: 5px;
-    background: -webkit-linear-gradient(0deg, #df5298,#677ffc);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 80px;
-    margin-top: 34px;
-}
-
-.no-items {
-    margin-top: 30px;
-    font-size: 30px;
-    color: white;
-}
-
 .latest-flex {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.latest-page {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -62,11 +50,9 @@
     margin-bottom: 30px;
     top: 0px;
     cursor: pointer;
-
     &:hover {
         top: -20px;
     }
-
 }
 
 .latest-content {
@@ -108,11 +94,11 @@
     margin-bottom: 25px;
     padding: 8px 75px;
     border-radius: 10px;
-
-
     &:hover {
         color: #dddddd;
     }
+    text-align:center;
+    border: 3px solid #ff37b2;
 }
 
 .gold-price {
@@ -123,39 +109,12 @@
     margin-bottom: 80px;
 }
 
-.next-prev-flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-
+.cart-form {
+    background: black;
+    border: 3px solid #ff37b2;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
 }
-
-
-.next-prev-button {
-    background-color: white;
-    font-size: 20px;
-    border-radius: 100%;
-    margin: 70px 14px;
-    width: 50px;
-    transition: 0.3s;
-    position: relative;
-}
-
-.prev {
-    right: 0px;
-
-    &:hover {
-        right: 10px;
-    }
-}
-
-.next {
-    left: 0px;
-
-    &:hover {
-        left: 10px;
-    }
-}
-
