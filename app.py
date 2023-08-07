@@ -38,6 +38,7 @@ class New(FlaskForm):
 class Info(FlaskForm):
     """Hi Audience"""
     name = StringField('Name')
+    email = StringField('E-Mail')
     phone = StringField('Phone')
     address = StringField('Address')
     submit = SubmitField('Submit')
@@ -215,11 +216,11 @@ def pay():
     """Hi Audience"""
     form = Info()
     if form.validate_on_submit:
-        email = current_user.email
+        email = form.email.data
         name = form.name.data
         phone = form.phone.data
         address = form.address.data
-        add_info(email, name, phone, address)
+        add_info(current_user.email, email, name, phone, address)
     return render_template('pay.html', email=email)
 
 
@@ -227,15 +228,16 @@ def pay():
 def success():
     """Hi Audience"""
     email = current_user.email
-    idt = bill(email)
+    idt, mail_to = bill(email)
     empty_cart(email)
+    mail("granthbagadia2004@gmail.com", "Test Mail")
     message = f"""From: From granthbagadia2004@gmail.com
     Subject: Order Placed Successfully!
 
     This is a confirmation for your order on Games-Trade India.
-    Your Order ID is {idt}
+    Your Order ID is {str(idt)}
     """
-    mail(email, message)
+    mail(mail_to, message)
     prod_qty(idt)
     flash("Order Placed Successfully!")
     return redirect(url_for('home'))

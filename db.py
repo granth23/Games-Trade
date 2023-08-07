@@ -165,13 +165,13 @@ def gen_id(temp_varl):
 
 def bill(email):
     """Hi Audience"""
-    for i in info_collection.find({'_id': email.split("@")[0]}):
-        info_collection.delete_one({'_id': email.split("@")[0]})
+    for i in info_collection.find({'_id': email}):
+        info_collection.delete_one({'_id': email})
         idt = gen_id(16)
         temp_order = {'_id': idt, 'name': i.get('name'), 'phone': i.get('phone'), 'address': i.get(
             'address'), 'cart': get_cart(email), 'email': email, 'amount': get_total(email)}
         orders_collection.insert_one(temp_order)
-        return idt
+        return idt, i['email']
 
 
 def prod_qty(idt):
@@ -194,7 +194,7 @@ def empty_cart(email):
     users_collection.update_one({'_id': _id}, {"$set": {'cart': cart}})
 
 
-def add_info(email, name, phone, address):
+def add_info(curr_id, email, name, phone, address):
     """Hi Audience"""
     temp_y = 0
     temp_x = 0
@@ -203,12 +203,10 @@ def add_info(email, name, phone, address):
         if email == i.get('_id'):
             temp_x += 1
     if temp_x != temp_y:
-        info_collection.delete_one({'_id': email.split("@")[0]})
-        info_collection.insert_one({'_id': email.split(
-            "@")[0], 'email': email, 'name': name, 'phone': phone, 'address': address})
+        info_collection.delete_one({'_id': curr_id})
+        info_collection.insert_one({'_id': curr_id, 'email': email, 'name': name, 'phone': phone, 'address': address})
     else:
-        info_collection.insert_one({'_id': email.split(
-            "@")[0], 'email': email, 'name': name, 'phone': phone, 'address': address})
+        info_collection.insert_one({'_id': curr_id, 'email': email, 'name': name, 'phone': phone, 'address': address})
 
 
 def mail(email, message):
@@ -220,6 +218,8 @@ def mail(email, message):
     server.starttls()
     server.login(sender_email, password)
     server.sendmail(sender_email, rec_email, message)
+
+# mail("granthbagadia2004@gmail.com", "cbdhjcdbnh")
 
 def save_product(category, name, quantity, mrp, srp, image, info):
     """Hi Audience"""
